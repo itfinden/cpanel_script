@@ -1,6 +1,4 @@
 {
-   "name" : "Itfinden",
-   "desc" : "archivo de configuración de easyapache4",
    "pkgs" : [
       "ea-apache24",
       "ea-apache24-config",
@@ -232,5 +230,7 @@
       "ea-profiles-cpanel"
    ],
    "version" : "0.1",
-   "tags" : []
+   "tags" : [],
+   "name" : "Itfinden",
+   "desc" : "archivo de configuración de easyapache4"
 }
