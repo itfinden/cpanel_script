@@ -29,3 +29,11 @@ Exim Configuration Manager
 Require clients to connect with SSL or issue the STARTTLS command before they are allowed to authenticate with the server. [?]
 
 cambiar a OFF
+
+
+MultiPHP INI Editor
+
+modificar los valores de los PHP
+
+a los valores que se cree que son optimos ... pero casi a varios es agregarles un 0 , excepto session.gc_maxlifetime que siempre es 1440
+
