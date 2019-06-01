@@ -11,9 +11,14 @@ Este archivo itfinden.json se debe agregar como profile en easyapache4 <-- despu
 
 en tweak setting 
 
-poner ssl 
+buscar ssl 
 
 Choose the closest matched domain for which that the system has a valid certificate when redirecting from non-SSL to SSL URLs. Formerly known as “Always redirect to SSL/TLS” [?] 
 
 poner en OFF
 
+buscar mail
+
+Number of failed or deferred messages a domain may send before protections can be triggered [?]
+
+aumentar a 35
