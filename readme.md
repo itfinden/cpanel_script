@@ -22,3 +22,10 @@ buscar mail
 Number of failed or deferred messages a domain may send before protections can be triggered [?]
 
 aumentar a 35
+
+
+Exim Configuration Manager 
+
+Require clients to connect with SSL or issue the STARTTLS command before they are allowed to authenticate with the server. [?]
+
+cambiar a OFF
