@@ -41,3 +41,4 @@ echo "0 6 * * * /etc/private/diario.sh>/dev/null 2>&1" >> $cron_path
 echo "0 7 * * * /etc/private/eximqueue.sh>/dev/null 2>&1" >> $cron_path
 echo "0 9 * * * /etc/private/smartd.sh>/dev/null 2>&1" >> $cron_path
 
+service crond restart
