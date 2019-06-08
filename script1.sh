@@ -32,8 +32,12 @@ cp /root/itfinden-cpanel_script/private/eximqueue.sh /etc/private/eximqueue.sh
 cp /root/itfinden-cpanel_script/private/smartd.sh /etc/private/smartd.sh
 
 #Configuracion para servidor dedicado
+cron_path=/var/spool/cron/root
 
-cat <(crontab -l) <(echo "0 8 * * * /root/itfinden-cpanel_script/liberaswap.sh") | crontab -
-cat <(crontab -l) <(echo "0 8 * * * /etc/private/diario.sh>/dev/null 2>&1") | crontab -
-cat <(crontab -l) <(echo "0 8 * * * /etc/private/eximqueue.sh>/dev/null 2>&1") | crontab -
-cat <(crontab -l) <(echo "0 8 * * * /etc/private/smartd.sh>/dev/null 2>&1") | crontab -
+#cron job to run every 10 min.
+echo "0 8 * * * /root/itfinden-cpanel_script/liberaswap.sh" >> $cron_path
+echo "0 6 * * * /etc/private/diario.sh>/dev/null 2>&1" >> $cron_path
+
+echo "0 7 * * * /etc/private/eximqueue.sh>/dev/null 2>&1" >> $cron_path
+echo "0 9 * * * /etc/private/smartd.sh>/dev/null 2>&1" >> $cron_path
+
