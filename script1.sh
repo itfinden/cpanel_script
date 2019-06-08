@@ -26,14 +26,14 @@ echo "soporte@itfinden.com" >> /etc/private/.envios
 echo "soporte@itfinden.com" >> /etc/private/.envios2
 
 
-#Configuracion para servidor dedicados
+#Copiar  archivos
+cp /root/itfinden-cpanel_script/private/diario.sh /etc/private/diario.sh
+cp /root/itfinden-cpanel_script/private/eximqueue.sh /etc/private/eximqueue.sh
+cp /root/itfinden-cpanel_script/private/smartd.sh /etc/private/smartd.sh
 
-echo -n ''
-echo; echo -n 'Creando cron jobs.....'
-rm -rf /etc/cron.d/mejoramiento
-echo "SHELL=/bin/sh
-0 21 * * * root sh /etc/private/act.sh>/dev/null 2>&1
-*/5 * * * * root sh /etc/private/eximqueue.sh>/dev/null 2>&1
-0 22 * * * root sh /etc/private/smartd.sh>/dev/null 2>&1
-" >> /etc/cron.d/mejoramiento
+#Configuracion para servidor dedicado
 
+cat <(crontab -l) <(echo "0 8 * * * /root/itfinden-cpanel_script/liberaswap.sh") | crontab -
+cat <(crontab -l) <(echo "0 8 * * * /etc/private/diario.sh>/dev/null 2>&1") | crontab -
+cat <(crontab -l) <(echo "0 8 * * * /etc/private/eximqueue.sh>/dev/null 2>&1") | crontab -
+cat <(crontab -l) <(echo "0 8 * * * /etc/private/smartd.sh>/dev/null 2>&1") | crontab -
